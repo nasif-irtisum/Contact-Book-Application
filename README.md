@@ -1,28 +1,44 @@
-# 📞 Java Contact Book Application
+# 📞 Java Contact Book Manager (OOP Lab Project)
 
-This is a **Contact Book Management System** developed in Java using the **NetBeans IDE**. It was created as an OOP (Object-Oriented Programming) laboratory project to demonstrate key concepts like **Encapsulation**, **Inheritance**, and **Polymorphism**.
+This is a **Contact Book Management System** developed in **Java** using the **Apache NetBeans IDE**. It was created as an OOP (Object-Oriented Programming) laboratory project to demonstrate fundamental principles, with a focus on implementing custom **data persistence using File I/O**.
 
 ---
 
 ## ✨ Features
 
-The application allows the user to manage a list of contacts with the following functionalities:
+The application provides a standard set of contact management features:
 
-* **Add New Contact:** Allows input of contact details (e.g., Name, Phone, Email).
-* **View All Contacts:** Displays a list of all stored contacts.
-* **Search Contact:** Find a contact based on a specific criteria (e.g., Name or Phone Number).
-* **Edit Contact:** Modify the details of an existing contact.
-* **Delete Contact:** Remove a contact from the list.
-* **Persistence:** Contacts are saved and loaded (e.g., using file I/O or a simple database like SQLite, if implemented).
+* **Create (Add) Contact:** Input and save new contact records (Name, Phone, Email, etc.).
+* **Read (View) Contacts:** Display all stored contacts from the data file.
+* **Update (Edit) Contact:** Modify the details of an existing contact.
+* **Delete Contact:** Remove a contact record from the system.
+* **Search:** Find contacts based on criteria (e.g., searching by name).
 
 ---
 
-## 🛠️ Technologies Used
+## 🛠️ Technologies & Key Concepts
 
-* **Programming Language:** Java Development Kit (JDK)
-* **Integrated Development Environment (IDE):** Apache NetBeans
-* **User Interface:** Java Swing/AWT (or Console-based, depending on your implementation)
-* **OOP Concepts:** Inheritance, Encapsulation, Polymorphism, Abstraction.
+| Category | Component | Description |
+| :--- | :--- | :--- |
+| **Language** | Java Development Kit (JDK) | Core programming language. |
+| **IDE** | Apache NetBeans | Development environment for coding and testing. |
+| **Persistence** | **Plain Text File (`contacts.txt`)** | Simple storage solution using Java File I/O. |
+| **OOP** | Encapsulation | Private class fields accessed via Getters/Setters. |
+| **OOP** | Inheritance & Polymorphism | Base `Contact` class extended by potential subclasses (if implemented). |
+| **I/O** | `java.io` Package | Use of classes like `FileReader`, `FileWriter`, `BufferedReader`, and `PrintWriter` for data handling. |
+
+---
+
+## 💾 Data Persistence Model
+
+A key feature of this project is the manual implementation of data saving and loading:
+
+1.  **Storage File:** All contact data is stored in a plain text file named **`contacts.txt`** (located in the project root/working directory).
+2.  **Saving Data:** When a contact is added, edited, or deleted, the `ContactManager` class writes the entire list of contacts back to the `contacts.txt` file.
+3.  **Loading Data:** Upon application startup, the system reads line-by-line from `contacts.txt`, parses the data using a delimiter (e.g., commas or pipes), and reconstructs the `Contact` objects.
+
+> **Example line format in `contacts.txt` (Hypothetical):**
+> `John Doe|555-1234|john@example.com`
 
 ---
 
@@ -33,30 +49,15 @@ The application allows the user to manage a list of contacts with the following 
     git clone [Your Repository URL Here]
     ```
 2.  **Open in NetBeans:**
-    * Launch **NetBeans IDE**.
+    * Launch **Apache NetBeans IDE**.
     * Go to `File` > `Open Project...` and navigate to the cloned folder.
-3.  **Run the Application:**
-    * Right-click on the project folder in the Projects window.
+3.  **Compile and Run:**
+    * Right-click on the main project folder in the Projects window.
     * Select **Run**.
     * *(Alternatively, press `F6`)*
-
----
-
-## 📚 OOP Implementation Details
-
-This project utilizes OOP principles through the following structure:
-
-* **`Contact` Class:** The base class (potentially abstract) containing common contact fields (Name, Phone Number) and methods.
-* **Subclasses (Inheritance):** Depending on your design, you might have subclasses like:
-    * `PersonalContact` (e.g., adds a Birthday field)
-    * `BusinessContact` (e.g., adds a Company Name field)
-* **`ContactManager` Class:** Handles the main business logic, such as adding, searching, and deleting contacts, typically using a `java.util.ArrayList` or similar data structure to hold `Contact` objects.
-* **Encapsulation:** All class fields are declared as `private` and accessed via public `getter` and `setter` methods.
 
 ---
 
 ## 👨‍💻 Author
 
 * **[Your Name]** - *Initial Work* - [Your Student ID] / [Link to your GitHub Profile (optional)]
-
----
