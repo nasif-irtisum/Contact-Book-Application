@@ -35,13 +35,7 @@ The application provides a standard set of contact management features:
 2.  **Open in NetBeans:**
     * Launch **Apache NetBeans IDE**.
     * Go to `File` > `Open Project...` and navigate to the cloned folder.
+    * modify the hardcoded path to `new FileReader("contact.txt")` in the code.
 3.  **Compile and Run:**
     * Right-click on the main project folder in the Projects window.
     * Select **Run**.
-    * *(Alternatively, press `F6`)*
-
----
-
-## 👨‍💻 Author
-
-* **[Your Name]** - *Initial Work* - [Your Student ID] / [Link to your GitHub Profile (optional)]
